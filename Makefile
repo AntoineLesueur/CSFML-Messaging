@@ -5,25 +5,34 @@
 ## Compile all files
 ##
 
-SRC_CLIENT	=	./dir_client/main.c	\
+SRC_CLIENT	=	./dir_client/main.c									\
+				./dir_client/init/init_all.c						\
+				./dir_client/init/init_client.c						\
+				./dir_client/init/init_window.c						\
+				./dir_client/init/init_rects.c						\
+				./dir_client/window/open_window.c					\
+				./dir_client/window/display/display_mess.c			\
+				./dir_client/window/display/display_menu.c			\
+				./dir_client/window/manage/manage_window.c			\
+				./dir_client/window/manage/manage_ip.c				\
 
-SRC_SERVER	=	./dir_server/main.c									\
-				./dir_server/init/init_serv.c						\
-				./dir_server/init/init_struct.c						\
-				./dir_server/init/init_window_serv.c				\
-				./dir_server/init/init_rects.c						\
-				./dir_server/window/open_window.c					\
-				./dir_server/window/display/display_all.c			\
-				./dir_server/window/display/display_top.c			\
-				./dir_server/window/display/display_launch.c		\
-				./dir_server/window/states/hover.c					\
-				./dir_server/window/states/clicked.c				\
-				./dir_server/window/manage/manage_window.c			\
-				./dir_server/window/manage/server/manage_server.c	\
-				./dir_server/window/manage/server/run_serv.c		\
-				./dir_server/window/manage/server/set_new_client.c	\
-				./dir_server/window/manage/server/new_message.c		\
-				./dir_server/destroy/destroy_all.c					\
+SRC_SERVER	=	./dir_server/main.c										\
+				./dir_server/init/init_serv.c							\
+				./dir_server/init/init_struct.c							\
+				./dir_server/init/init_window_serv.c					\
+				./dir_server/init/init_rects.c							\
+				./dir_server/window/open_window.c						\
+				./dir_server/window/display/display_all.c				\
+				./dir_server/window/display/display_top.c				\
+				./dir_server/window/display/display_launch.c			\
+				./dir_server/window/states/hover.c						\
+				./dir_server/window/states/clicked.c					\
+				./dir_server/window/manage/manage_window.c				\
+				./dir_server/window/manage/server_run/manage_server.c	\
+				./dir_server/window/manage/server_run/run_serv.c		\
+				./dir_server/window/manage/server_run/set_new_client.c	\
+				./dir_server/window/manage/server_run/new_message.c		\
+				./dir_server/destroy/destroy_all.c						\
 
 
 

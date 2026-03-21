@@ -5,7 +5,11 @@
 ** main
 */
 
+#include "client.h"
+
 int main(void)
 {
-    return 0;
+    if (init_all() == EXIT_FAILURE)
+        return EXIT_FAILURE;
+    return EXIT_SUCCESS;
 }
