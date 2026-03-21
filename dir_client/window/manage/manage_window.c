@@ -7,8 +7,10 @@
 
 #include "client.h"
 
-void manage_window(win_info_t *win_info, sfRenderWindow *window, sfEvent *event)
+void manage_window(win_info_t *win_info, sfRenderWindow *window, sfEvent *event, client_info_t *client_info)
 {
+    hover(window, win_info);
+    clicked(event, win_info, client_info);
     if (win_info->is_connect == false)
         manage_ip(win_info, event);
 }

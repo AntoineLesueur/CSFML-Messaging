@@ -10,11 +10,14 @@ SRC_CLIENT	=	./dir_client/main.c									\
 				./dir_client/init/init_client.c						\
 				./dir_client/init/init_window.c						\
 				./dir_client/init/init_rects.c						\
+				./dir_client/init/init_sa_in.c						\
 				./dir_client/window/open_window.c					\
 				./dir_client/window/display/display_mess.c			\
 				./dir_client/window/display/display_menu.c			\
 				./dir_client/window/manage/manage_window.c			\
 				./dir_client/window/manage/manage_ip.c				\
+				./dir_client/window/states/hover.c					\
+				./dir_client/window/states/clicked.c				\
 
 SRC_SERVER	=	./dir_server/main.c										\
 				./dir_server/init/init_serv.c							\

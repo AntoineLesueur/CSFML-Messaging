@@ -45,4 +45,5 @@ void init_rects(win_info_t *win_info)
     create_text(win_info->connect_butt->connect, 690, 770, 100, "CONNECT", arial, &sfWhite);
     create_rect(win_info->get_ip->rect, 600, 300, 700, 120, &sfWhite);
     create_text(win_info->get_ip->ip, 610, 300, 100, "", arial, &sfBlack);
+    win_info->connect_butt->bound = sfRectangleShape_getGlobalBounds(win_info->connect_butt->rect);
 }

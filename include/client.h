@@ -32,6 +32,7 @@ typedef struct lst_mess_s {
 typedef struct {
     sfRectangleShape *rect;
     sfText *connect;
+    sfFloatRect bound;
 } connect_butt_t;
 
 typedef struct {
@@ -59,7 +60,8 @@ typedef struct {
 
 typedef struct {
     int socket_fd;
-    char *ip_serv;
+    int ip_serv;
+    char *str_ip;
     struct sockaddr_in sa_in;
 } client_info_t;
 
@@ -67,13 +69,17 @@ int init_all(void);
 int init_window(win_info_t *win_info);
 int init_client(client_info_t *client_info);
 void init_rects(win_info_t *win_info);
+void init_sa_in(win_info_t *win_info, client_info_t *client_info);
 
 void open_window(win_info_t *win_info, client_info_t *client_info);
 
-void manage_window(win_info_t *win_info, sfRenderWindow *window, sfEvent *event);
+void manage_window(win_info_t *win_info, sfRenderWindow *window, sfEvent *event, client_info_t *client_info);
 void manage_ip(win_info_t *win_info, sfEvent *event);
 
 void display_menu(win_info_t *win_info, sfRenderWindow *window);
 void display_messaging(win_info_t *win_info, sfRenderWindow *wwindow);
+
+void hover(sfRenderWindow *window, win_info_t *win_info);
+void clicked(sfEvent *event, win_info_t *win_info, client_info_t *client_info);
 
 #endif

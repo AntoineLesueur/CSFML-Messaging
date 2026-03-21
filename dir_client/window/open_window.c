@@ -25,7 +25,7 @@ void open_window(win_info_t *win_info, client_info_t *client_info)
         return;
     while (sfRenderWindow_isOpen(window)) {
         while (sfRenderWindow_pollEvent(window, &event)) {
-            manage_window(win_info, window, &event);
+            manage_window(win_info, window, &event, client_info);
             close_event(window, &event);
         }
         sfRenderWindow_clear(window, background);

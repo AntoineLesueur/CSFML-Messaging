@@ -17,6 +17,7 @@ static int create_socket(client_info_t *client_info)
 
 int init_client(client_info_t *client_info)
 {
+    client_info->str_ip = NULL;
     if (create_socket(client_info) == EXIT_FAILURE)
         return EXIT_FAILURE;
     return EXIT_SUCCESS;
