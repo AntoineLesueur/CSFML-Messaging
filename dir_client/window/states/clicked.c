@@ -14,5 +14,7 @@ void clicked(sfEvent *event, win_info_t *win_info, client_info_t *client_info)
             init_sa_in(win_info, client_info);
             win_info->is_connect = true;
         }
+        if (client_info->ip_serv <= 0)
+            win_info->is_connect = false;
     }
 }

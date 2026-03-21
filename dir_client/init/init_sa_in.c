@@ -17,4 +17,5 @@ void init_sa_in(win_info_t *win_info, client_info_t *client_info)
     client_info->sa_in.sin_family = AF_INET;
     client_info->sa_in.sin_port = htons(8080);
     client_info->ip_serv = inet_pton(AF_INET, client_info->str_ip, &(client_info->sa_in.sin_addr.s_addr));
+    connect_client(client_info);
 }

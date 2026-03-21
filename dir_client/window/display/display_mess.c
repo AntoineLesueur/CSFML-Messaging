@@ -7,7 +7,10 @@
 
 #include "client.h"
 
-void display_messaging(win_info_t *win_info, sfRenderWindow *wwindow)
+void display_messaging(win_info_t *win_info, sfRenderWindow *window, client_info_t *client_info)
 {
-
+    sfRenderWindow_drawRectangleShape(window, win_info->all_mess->rect, NULL);
+    sfRenderWindow_drawRectangleShape(window, win_info->write_mess->rect, NULL);
+    sfText_setString(client_info->mess, client_info->message);
+    sfRenderWindow_drawText(window, client_info->mess, NULL);
 }

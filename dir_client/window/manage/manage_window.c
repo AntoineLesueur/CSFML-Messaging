@@ -13,4 +13,7 @@ void manage_window(win_info_t *win_info, sfRenderWindow *window, sfEvent *event,
     clicked(event, win_info, client_info);
     if (win_info->is_connect == false)
         manage_ip(win_info, event);
+    if (win_info->is_connect == true) {
+        manage_mess(win_info, client_info, window, event);
+    }
 }

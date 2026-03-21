@@ -29,7 +29,10 @@ void open_window(win_info_t *win_info, client_info_t *client_info)
             close_event(window, &event);
         }
         sfRenderWindow_clear(window, background);
-        display_menu(win_info, window);
+        if (win_info->is_connect == false)
+            display_menu(win_info, window);
+        if (win_info->is_connect == true)
+            display_messaging(win_info, window, client_info);
         sfRenderWindow_display(window);
     }
 }

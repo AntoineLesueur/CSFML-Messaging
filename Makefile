@@ -15,6 +15,7 @@ SRC_CLIENT	=	./dir_client/main.c									\
 				./dir_client/window/display/display_mess.c			\
 				./dir_client/window/display/display_menu.c			\
 				./dir_client/window/manage/manage_window.c			\
+				./dir_client/window/manage/manage_mess.c			\
 				./dir_client/window/manage/manage_ip.c				\
 				./dir_client/window/states/hover.c					\
 				./dir_client/window/states/clicked.c				\

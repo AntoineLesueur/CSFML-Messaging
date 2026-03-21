@@ -23,7 +23,7 @@ int init_all(void)
         return EXIT_FAILURE;
     if (init_client(client_info) == EXIT_FAILURE)
         return EXIT_FAILURE;
-    init_rects(win_info);
+    init_rects(win_info, client_info);
     open_window(win_info, client_info);
     return EXIT_SUCCESS;
 }
