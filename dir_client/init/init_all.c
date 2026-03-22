@@ -11,7 +11,6 @@ int init_all(void)
 {
     client_info_t *client_info = malloc(sizeof(*client_info));
     win_info_t *win_info = malloc(sizeof(*win_info));
-    lst_mess_t *lst_mess = NULL;
 
     if (!client_info)
         return EXIT_FAILURE;

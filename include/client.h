@@ -28,6 +28,7 @@ typedef struct lst_mess_s {
     char *message;
     sfText *text;
     struct lst_mess_s *next;
+    sfVector2f pos;
 } lst_mess_t;
 
 typedef struct {
@@ -78,15 +79,17 @@ void init_sa_in(win_info_t *win_info, client_info_t *client_info);
 
 void open_window(win_info_t *win_info, client_info_t *client_info);
 
-void manage_window(win_info_t *win_info, sfRenderWindow *window, sfEvent *event, client_info_t *client_info);
+void manage_window(win_info_t *win_info, sfRenderWindow *window, sfEvent *event, client_info_t *client_info, lst_mess_t **lst_mess);
 void manage_ip(win_info_t *win_info, sfEvent *event);
 void manage_mess(win_info_t *win_info, client_info_t *client_info, sfRenderWindow *window,
-    sfEvent *event);
+    sfEvent *event, lst_mess_t **lst_mess);
 
 void display_menu(win_info_t *win_info, sfRenderWindow *window);
-void display_messaging(win_info_t *win_info, sfRenderWindow *window, client_info_t *client_info);
+void display_messaging(win_info_t *win_info, sfRenderWindow *window, client_info_t *client_info, lst_mess_t *lst);
 
 void hover(sfRenderWindow *window, win_info_t *win_info);
 void clicked(sfEvent *event, win_info_t *win_info, client_info_t *client_info);
+
+void push_back(char *mess, lst_mess_t **lst);
 
 #endif
