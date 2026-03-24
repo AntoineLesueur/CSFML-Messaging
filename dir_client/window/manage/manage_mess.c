@@ -12,9 +12,11 @@ void recv_mess(lst_mess_t **lst, client_info_t *client_info)
     char mess_recv[BUFSIZ];
     int recv_res = recv(client_info->socket_fd, mess_recv, BUFSIZ, MSG_DONTWAIT);
 
-    if (recv_res < 0)
+    if (recv_res <= 0)
         return;
     mess_recv[recv_res] = '\0';
+    if (strlen(mess_recv) == 0)
+        return;
     push_back(mess_recv, lst);
 }
 
@@ -25,7 +27,8 @@ static void send_mess(client_info_t *client_info, sfEvent *event, lst_mess_t **l
 
     if (event->key.code == sfKeyEnter) {
         push_back(mess_tmp, lst_mess);
-        send(client_info->socket_fd, mess_tmp, len, 0);
+        send(client_info->socket_fd, mess_tmp, BUFSIZ, 0);
+        free(mess_tmp);
         for (int i = 0; i < len; i++) {
             client_info->message[i] = '\0';
         }
@@ -55,5 +58,4 @@ void manage_mess(client_info_t *client_info, sfEvent *event, lst_mess_t **lst_me
         delete_char(client_info, event);
         send_mess(client_info, event, lst_mess);
     }
-    recv_mess(lst_mess, client_info);
 }

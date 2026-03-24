@@ -32,8 +32,10 @@ void open_window(win_info_t *win_info, client_info_t *client_info)
         sfRenderWindow_clear(window, background);
         if (win_info->is_connect == false)
             display_menu(win_info, window);
-        if (win_info->is_connect == true)
+        if (win_info->is_connect == true) {
+            recv_mess(&lst_mess, client_info);
             display_messaging(win_info, window, client_info, lst_mess);
+        }
         sfRenderWindow_display(window);
     }
 }

@@ -22,6 +22,7 @@ void open_window(server_info_t *serv_info, window_server_t *win_info)
     sfColor background = sfColor_fromRGB(22, 35, 52);
 
     fd_set all_fds;
+    FD_ZERO(&all_fds);
     sfRenderWindow_setFramerateLimit(window, 60);
     if (!window)
         return;
